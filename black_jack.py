@@ -39,9 +39,21 @@ while True:
     print("1.はい")
     print("2.いいえ")
     playerReply = int(input())
-    if playerReply == 1 or playerReply == 2:
-        print('ok')
+    if playerReply == 1:
+        draw_a_card(playerHand)
+        print(f"あなたの手札は{playerHand}です")
+    elif playerReply == 2:
+        total = [dealerHand[1][1]]
+        while True:
+            draw_a_card(dealerHand)
+            for i in dealerHand:
+                total.append(i[1])
+            if sum(total) > 17:
+                print(total)
+                print(dealerHand)
+                print(sum(total))
+                break
         break
     else:
-        print("1か2を選択してください")
+        print("※1か2を選択してください")
 
