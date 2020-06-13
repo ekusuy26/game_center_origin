@@ -33,3 +33,13 @@ for i in range(2):
 print(f"あなたの手札は{playerHand}です")
 print(f"ディーラーの手札は{dealerHand[0]}です")
 
+print("カードを追加で引きますか？")
+print("1.はい")
+print("2.いいえ")
+
+playerReply = int(input())
+if playerReply == 1 or playerReply == 2:
+    print('ok')
+else:
+    print("error")
+
