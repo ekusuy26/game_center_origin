@@ -5,7 +5,7 @@ print ('this game is a simple card game.')
 print ('Make your hand so that the total number of cards does not exceed [21].')
 print ('The one closer to [21] is the winner!')
 
-marks = ['spade', 'heart', 'diamond', 'club']
+marks = ['♠︎', '❤︎', '♦︎', '♣︎']
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
 # デッキを作成
@@ -28,3 +28,8 @@ def draw_a_card(hand):
 for i in range(2):
     draw_a_card(playerHand)
     draw_a_card(dealerHand)
+
+# 初期手札を表示
+print(f"あなたの手札は{playerHand}です")
+print(f"ディーラーの手札は{dealerHand[0]}です")
+
