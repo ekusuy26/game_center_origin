@@ -48,7 +48,7 @@ while True:
             total = []
             for i in dealerHand:
                 total.append(i[1])
-            if sum(total) > 17:
+            if sum(total) >= 17:
                 break
             draw_a_card(dealerHand)
         break
@@ -70,4 +70,15 @@ for i in dealerHand:
 print(f"あなたの手札は{sum(playerSum)}です")
 print(f"ディーラーの手札は{sum(dealerSum)}です")
 
-if 
+if sum(playerSum) > 21 and sum(dealerSum) > 21:
+    print('ディーラーの勝ち')
+elif sum(playerSum) > 21:
+    print('ディーラーの勝ち')
+elif sum(dealerSum) > 21:
+    print('プレイヤーの勝ち')
+elif sum(playerSum) > sum(dealerSum):
+    print('プレイヤーの勝ち')
+elif sum(playerSum) < sum(dealerSum):
+    print('ディーラーの勝ち')
+else:
+    print('引き分けです')
