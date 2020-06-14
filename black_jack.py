@@ -5,7 +5,7 @@ print ('this game is a simple card game.')
 print ('Make your hand so that the total number of cards does not exceed [21].')
 print ('The one closer to [21] is the winner!')
 
-marks = ['♠︎', '❤︎', '♦︎', '♣︎']
+marks = ['spade', 'heart', 'diamond', 'club']
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
 # デッキを作成
@@ -42,7 +42,6 @@ while True:
     if playerReply == 1:
         draw_a_card(playerHand)
         print(f"あなたの手札は{playerHand}です")
-        # ディーラーの挙動を設定中、エラー出る
     elif playerReply == 2:
         while True:
             total = []
@@ -82,3 +81,7 @@ elif sum(playerSum) < sum(dealerSum):
     print('ディーラーの勝ち')
 else:
     print('引き分けです')
+
+# 手札の出力方法を作成中
+for i in playerHand:
+    print(f"| {i[0].ljust(7)} | {str(i[1]).rjust(2)} |")
