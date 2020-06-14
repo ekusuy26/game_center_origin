@@ -42,18 +42,19 @@ while True:
     if playerReply == 1:
         draw_a_card(playerHand)
         print(f"あなたの手札は{playerHand}です")
+        # ディーラーの挙動を設定中、エラー出る
     elif playerReply == 2:
-        total = [dealerHand[1][1]]
         while True:
-            draw_a_card(dealerHand)
+            total = []
             for i in dealerHand:
                 total.append(i[1])
             if sum(total) > 17:
-                print(total)
-                print(dealerHand)
-                print(sum(total))
                 break
+            draw_a_card(dealerHand)
         break
     else:
         print("※1か2を選択してください")
 
+
+print(f"あなたの手札は{playerHand}です")
+print(f"ディーラーの手札は{dealerHand}です")
