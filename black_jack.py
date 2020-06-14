@@ -35,14 +35,12 @@ print(f"ディーラーの手札は{dealerHand[0]}です")
 
 
 while True:
-    print("カードを追加で引きますか？")
-    print("1.はい")
-    print("2.いいえ")
-    playerReply = int(input())
-    if playerReply == 1:
+    print("Is it a hit or a stand?  [hit/stand]")
+    playerReply = input()
+    if playerReply == "hit":
         draw_a_card(playerHand)
         print(f"あなたの手札は{playerHand}です")
-    elif playerReply == 2:
+    elif playerReply == "stand":
         while True:
             total = []
             for i in dealerHand:
@@ -52,11 +50,7 @@ while True:
             draw_a_card(dealerHand)
         break
     else:
-        print("※1か2を選択してください")
-
-
-print(f"あなたの手札は{playerHand}です")
-print(f"ディーラーの手札は{dealerHand}です")
+        print("Choose between hit or stand.")
 
 playerSum = []
 for i in playerHand:
@@ -66,8 +60,22 @@ dealerSum = []
 for i in dealerHand:
     dealerSum.append(i[1])
 
-print(f"あなたの手札は{sum(playerSum)}です")
-print(f"ディーラーの手札は{sum(dealerSum)}です")
+# 手札を出力
+print('<<< player >>>')
+playerAddition = []
+dealerAddition = []
+for i in playerHand:
+    playerAddition.append(i[1])
+    print(f"|{i[0].ljust(7)} | {str(i[1]).rjust(2)}|")
+print('--------------')
+print(f"|total   | {str(sum(playerAddition)).rjust(2)}|")
+print()
+print('<<< dealer >>>')
+for i in dealerHand:
+    dealerAddition.append(i[1])
+    print(f"|{i[0].ljust(7)} | {str(i[1]).rjust(2)}|")
+print('--------------')
+print(f"|total   | {str(sum(dealerAddition)).rjust(2)}|")
 
 if sum(playerSum) > 21 and sum(dealerSum) > 21:
     print('ディーラーの勝ち')
@@ -81,7 +89,3 @@ elif sum(playerSum) < sum(dealerSum):
     print('ディーラーの勝ち')
 else:
     print('引き分けです')
-
-# 手札の出力方法を作成中
-for i in playerHand:
-    print(f"| {i[0].ljust(7)} | {str(i[1]).rjust(2)} |")
