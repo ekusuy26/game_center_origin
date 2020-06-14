@@ -4,6 +4,7 @@ print ('welcome to BLACK JACK!!')
 print ('this game is a simple card game.')
 print ('Make your hand so that the total number of cards does not exceed [21].')
 print ('The one closer to [21] is the winner!')
+print()
 
 marks = ['spade', 'heart', 'diamond', 'club']
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
@@ -30,9 +31,16 @@ for i in range(2):
     draw_a_card(dealerHand)
 
 # 初期手札を表示
-print(f"あなたの手札は{playerHand}です")
-print(f"ディーラーの手札は{dealerHand[0]}です")
-
+print('<<< player >>>')
+playerAddition = []
+for i in playerHand:
+    playerAddition.append(i[1])
+    print(f"|{i[0].ljust(7)} | {str(i[1]).rjust(2)}|")
+print('--------------')
+print()
+print('<<< dealer >>>')
+print(f"|{dealerHand[0][0].ljust(7)} | {str(dealerHand[0][1]).rjust(2)}|")
+print('--------------')
 
 while True:
     print("Is it a hit or a stand?  [hit/stand]")
