@@ -58,3 +58,16 @@ while True:
 
 print(f"あなたの手札は{playerHand}です")
 print(f"ディーラーの手札は{dealerHand}です")
+
+playerSum = []
+for i in playerHand:
+    playerSum.append(i[1])
+
+dealerSum = []
+for i in dealerHand:
+    dealerSum.append(i[1])
+
+print(f"あなたの手札は{sum(playerSum)}です")
+print(f"ディーラーの手札は{sum(dealerSum)}です")
+
+if 
